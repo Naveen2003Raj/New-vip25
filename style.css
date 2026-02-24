@@ -5,6 +5,7 @@
 
 /* ---------- FONTS ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* ---------- CSS VARIABLES ---------- */
 :root {
@@ -34,7 +35,6 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Sora', sans-serif;
   background: var(--bg-main);
   color: var(--text-body);
   line-height: 1.7;
@@ -54,8 +54,8 @@ body {
 }
 
 .section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-family: 'Sora';
+  font-size: 20px;
   letter-spacing: 3px;
   color: var(--green);
   text-transform: uppercase;
@@ -63,7 +63,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Orbitron',sans-serif;
   font-weight: 700;
   font-size: clamp(28px, 4vw, 42px);
   color: var(--text-heading);
@@ -83,6 +83,7 @@ body {
   color: var(--text-sub);
   /* max-width: 600px; */
   margin-bottom: 48px;
+  font-family: 'Inter';
 }
 
 section {
@@ -192,7 +193,7 @@ section {
 }
 
 .nav-logo-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
   font-weight: 700;
   font-size: 20px;
   color: var(--text-heading);
@@ -318,7 +319,7 @@ section {
 }
 
 /* Animated grid lines */
-.hero-grid {
+/* .hero-grid {
   position: absolute;
   inset: 0;
   background-image:
@@ -327,7 +328,7 @@ section {
   background-size: 60px 60px;
   z-index: 1;
   animation: gridMove 20s linear infinite;
-}
+} */
 
 @keyframes gridMove {
   0% { background-position: 0 0; }
@@ -374,7 +375,7 @@ section {
 }
 
 .hero-heading {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Orbitron';
   font-weight: 700;
   font-size: clamp(36px, 6vw, 72px);
   color: var(--text-heading);
@@ -401,6 +402,7 @@ section {
   max-width: 520px;
   margin-bottom: 40px;
   animation: fadeInUp 0.8s 0.4s ease both;
+  font-family: 'Sora';
 }
 
 .hero-buttons {
@@ -441,6 +443,7 @@ section {
   font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 0.5px;
+  font-family: 'Sora';
 }
 
 .hero-scroll {
@@ -486,7 +489,7 @@ section {
    WHO WE ARE
    ============================================ */
 #about {
-  background: var(--bg-alt);
+  background: var(--bg-main);
   position: relative;
   overflow: hidden;
 }
@@ -516,11 +519,22 @@ section {
 }
 
 .about-img-main {
-  width: 100%;
+  width: 80%;
+  height: 550px;
+  margin: 0 auto;              /* ✅ centers horizontally */
+
   border-radius: var(--radius);
   border: 1px solid var(--border-green);
-  box-shadow: 0 0 40px rgba(76,175,80,0.15);
+  box-shadow: 0 0 40px rgba(76, 175, 80, 0.15);
+
   display: block;
+  object-fit: cover;
+  background-color: #000;
+}
+.about-video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about-img-badge {
@@ -564,8 +578,8 @@ section {
 }
 
 .mv-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-family: 'Sora';
+  font-size: 12px;
   letter-spacing: 2px;
   color: var(--gold);
   margin-bottom: 8px;
@@ -575,6 +589,7 @@ section {
   font-size: 15px;
   color: var(--text-sub);
   line-height: 1.6;
+  font-family: 'Inter';
 }
 
 /* ============================================
@@ -648,9 +663,8 @@ section {
 
 .service-icon {
   width: 52px; height: 52px;
-  background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(212,175,55,0.1));
-  border: 1px solid var(--border-green);
-  border-radius: 12px;
+  /* background: linear-gradient(135deg, rgba(76,175,80,0.15), rgba(212,175,55,0.1));
+  border: 1px solid var(--border-green); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -660,12 +674,12 @@ section {
 }
 
 .service-card:hover .service-icon {
-  background: linear-gradient(135deg, rgba(76,175,80,0.3), rgba(212,175,55,0.2));
+ 
   box-shadow: 0 0 20px rgba(76,175,80,0.3);
 }
 
 .service-name {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Sora';
   font-weight: 700;
   font-size: 18px;
   color: var(--text-heading);
@@ -676,13 +690,14 @@ section {
   font-size: 14px;
   color: var(--text-body);
   line-height: 1.7;
+  font-family: 'Inter';
 }
 
 /* ============================================
    WHY VIP25
    ============================================ */
 #why {
-  background: var(--bg-alt);
+  background: var(--bg-main);
   position: relative;
   overflow: hidden;
 }
@@ -757,11 +772,13 @@ section {
   font-size: 15px;
   color: var(--text-heading);
   margin-bottom: 4px;
+  font-family: 'Sora';
 }
 
 .why-text p {
   font-size: 13px;
   color: var(--text-body);
+  font-family: 'Inter';
 }
 
 /* ============================================
@@ -842,14 +859,16 @@ section {
 
 .step-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-heading);
+  font-family: 'Sora';
 }
 
 .step-desc {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-body);
   line-height: 1.6;
+  font-family: 'Inter';
 }
 
 /* ============================================
@@ -894,7 +913,8 @@ section {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 15px;
+  font-family: 'Sora';
   color: var(--text-sub);
 }
 
@@ -928,8 +948,9 @@ section {
 
 .form-group label {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
+  font-family: 'Inter';
   color: var(--text-sub);
   margin-bottom: 8px;
   letter-spacing: 0.3px;
@@ -995,6 +1016,7 @@ section {
   font-size: 12px;
   margin-top: 4px;
   display: none;
+  font-family: 'Sora';
 }
 
 .form-success {
@@ -1002,8 +1024,9 @@ section {
   text-align: center;
   padding: 24px;
   color: var(--green);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
+   font-family: 'Inter';
 }
 
 .btn-submit {
@@ -1053,6 +1076,8 @@ section {
 .contact-card .c-icon {
   font-size: 28px;
   margin-bottom: 4px;
+  width: 40px;
+  height: 40px;
 }
 
 .contact-card h4 {
@@ -1061,6 +1086,7 @@ section {
   color: var(--text-muted);
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-family: 'Sora';
 }
 
 .contact-card p, .contact-card a {
@@ -1068,6 +1094,7 @@ section {
   color: var(--text-sub);
   text-decoration: none;
   transition: var(--transition);
+  font-family: 'Inter';
 }
 
 .contact-card a:hover { color: var(--green); }
@@ -1081,7 +1108,6 @@ section {
 .social-link {
   width: 40px; height: 40px;
   background: var(--bg-alt);
-  border: 1px solid var(--border-green);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -1123,7 +1149,7 @@ footer {
 }
 
 .footer-logo-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron';
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -1140,6 +1166,7 @@ footer {
 .footer-copy {
   font-size: 13px;
   color: var(--text-muted);
+  font-family: 'Inter';
 }
 
 .footer-links {
@@ -1153,6 +1180,7 @@ footer {
   color: var(--text-muted);
   text-decoration: none;
   transition: var(--transition);
+  font-family: 'Inter';
 }
 
 .footer-links a:hover { color: var(--green); }
@@ -1161,11 +1189,15 @@ footer {
    CAREER PAGE
    ============================================ */
 .career-hero {
-  min-height: 40vh;
+  min-height: 90vh;
   display: flex;
-  align-items: flex-end;
+  justify-content: center;      /* ✅ horizontal center */
   padding: 100px 0 60px;
-  background: linear-gradient(180deg, rgba(76,175,80,0.06) 0%, transparent 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(76,175,80,0.06) 0%,
+    transparent 100%
+  );
   border-bottom: 1px solid var(--border-green);
   position: relative;
   overflow: hidden;
@@ -1175,9 +1207,6 @@ footer {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(76,175,80,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(76,175,80,0.04) 1px, transparent 1px);
   background-size: 50px 50px;
 }
 
@@ -1207,8 +1236,8 @@ footer {
 }
 
 .career-info-card h3 {
-  font-family: 'Sora', sans-serif;
-  font-size: 18px;
+  font-family: 'Sora';
+  font-size: 19px;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 16px;
@@ -1227,6 +1256,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Inter';
 }
 
 .career-perks li::before {
@@ -1247,6 +1277,7 @@ footer {
   cursor: pointer;
   transition: var(--transition);
   user-select: none;
+  font-family: 'Sora';
 }
 .skill-tag.active {
   background: var(--green);

@@ -1,0 +1,104 @@
+/* ============================================
+   SCROLL REVEAL — CSS ANIMATION CLASSES
+   VIP25 Premium Animation System
+   ============================================
+
+   These classes define the INITIAL (hidden) states.
+   JavaScript handles transitions to the visible state
+   dynamically via inline styles, giving full control
+   over duration and delay per element.
+
+   You can use these as fallback static styles or
+   as a reference for what each animation does.
+   ============================================ */
+
+
+/* -----------------------------------------------
+   BASE: All animatable elements start invisible.
+   JS will handle the reveal transition.
+   ----------------------------------------------- */
+[data-animate],
+.reveal,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* -----------------------------------------------
+   ANIMATION TYPES — Initial hidden states
+   (These match what JS sets in setHiddenState())
+   ----------------------------------------------- */
+
+[data-animate="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(-50px);
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(50px);
+}
+
+[data-animate="zoom-in"] {
+  transform: scale(0.92);
+  filter: blur(4px);
+}
+
+
+/* -----------------------------------------------
+   VISIBLE STATE — Applied by JS when in viewport.
+   Defined here as a reference / CSS-only fallback.
+   ----------------------------------------------- */
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+  filter: blur(0);
+}
+
+
+/* -----------------------------------------------
+   STAGGER HELPERS — Optional utility classes
+   for manually staggering sibling elements
+   without JS data attributes.
+   ----------------------------------------------- */
+.stagger-1 { --anim-delay: 0ms; }
+.stagger-2 { --anim-delay: 100ms; }
+.stagger-3 { --anim-delay: 200ms; }
+.stagger-4 { --anim-delay: 300ms; }
+.stagger-5 { --anim-delay: 400ms; }
+.stagger-6 { --anim-delay: 500ms; }
+
+
+/* -----------------------------------------------
+   DURATION HELPERS — Utility classes for common
+   animation speed presets (applied via JS or inline).
+   ----------------------------------------------- */
+
+/* Fast — micro-interactions, small UI elements */
+.anim-fast   { --anim-duration: 400ms; }
+
+/* Default — most content blocks */
+.anim-normal { --anim-duration: 700ms; }
+
+/* Slow — hero elements, full-width sections */
+.anim-slow   { --anim-duration: 1000ms; }
+
+/* Dramatic — large images, section headers */
+.anim-cinematic { --anim-duration: 1400ms; }
