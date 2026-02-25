@@ -348,6 +348,9 @@ if (careerForm) {
       portfolio: document.getElementById('ca-portfolio'),
       linkedin : document.getElementById('ca-linkedin'),
       github   : document.getElementById('ca-github'),
+      project1 : document.getElementById('ca-project1'),
+      project2 : document.getElementById('ca-project2'),
+      project3 : document.getElementById('ca-project3'),
       message  : document.getElementById('ca-message'),
       avail    : document.getElementById('ca-availability'),
     };
@@ -360,8 +363,11 @@ if (careerForm) {
       [!f.exp.value,                                                                           'ca-err-exp',       f.exp],
       [!f.skills.value           || f.skills.value.split(',').filter(Boolean).length === 0,  'ca-err-skills',    null],
       [!f.portfolio.value.trim(),                                                             'ca-err-portfolio', f.portfolio],
-       [!f.linkedin.value.trim(),                                                             'ca-err-linkedin', f.linkedin],
-        [!f.github.value.trim(),                                                             'ca-err-github', f.github],
+      [!f.linkedin.value.trim(),                                                             'ca-err-linkedin', f.linkedin],
+      [!f.github.value.trim(),                                                             'ca-err-github', f.github],
+      [!f.project1.value.trim(),                                                             'ca-err-project1', f.project1],
+       [!f.project2.value.trim(),                                                             'ca-err-project2', f.project2],
+        [!f.project3.value.trim(),                                                             'ca-err-project3', f.project3],
       [!f.message.value.trim()   || f.message.value.trim().length < 20,                      'ca-err-message',   f.message],
       [!f.avail.value,                                                                         'ca-err-avail',     f.avail],
     ];
@@ -459,3 +465,19 @@ document.addEventListener('DOMContentLoaded', () => {
     '.hero-badge, .hero-heading, .hero-sub, .hero-buttons, .hero-stats'
   ).forEach(el => { el.style.visibility = 'visible'; });
 });
+
+  const video = document.getElementById("aboutVideo");
+  const status = document.getElementById("soundStatus");
+  let hideTimeout;
+
+  video.addEventListener("click", () => {
+    video.muted = !video.muted;
+
+    status.textContent = video.muted ? "Muted 🔇" : "Sound On 🔊";
+    status.classList.add("show");
+
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+      status.classList.remove("show");
+    }, 2000); // 2 seconds
+  });

@@ -19,7 +19,7 @@
     <div class="nav-inner">
       <!-- Logo -->
       <a href="index.html" class="nav-logo">
-        <img src="./resources/Logo__1_-removebg-preview.png" alt="">
+        <img src="./resources/Logo.png" alt="">
         <span class="nav-logo-text"><span>VIP</span>25</span>
       </a>
 
@@ -50,7 +50,7 @@
     <!-- Background Video -->
     <video class="hero-video-bg" autoplay muted loop playsinline poster="">
       <!-- Primary video -->
-      <source src="./resources/VID-20260223-WA0001.mp4" type="video/mp4" />
+      <source src="./resources/home.mp4" type="video/mp4" />
       <!-- Fallback video -->
       <source src="./resources/VID-20260223-WA0001.mp4" type="video/mp4" />
     </video>
@@ -94,7 +94,7 @@
     <!-- Scroll indicator -->
     <div class="hero-scroll">
       <div class="scroll-line"></div>
-      <span>SCROLL</span>
+      <span style="font-family: 'Inter';">SCROLL</span>
     </div>
   </section>
 
@@ -114,10 +114,23 @@
             class="about-img-main"
             loading="lazy"
           /> -->
-<div class="about-video-wrapper">
+<!-- <div class="about-video-wrapper">
   <video class="about-img-main" autoplay muted loop playsinline>
     <source src="./resources/InShot_20260224_163104091.mp4" type="video/mp4">
   </video>
+</div> -->
+<div class="about-video-wrapper">
+  <video id="aboutVideo"
+         class="about-img-main"
+         autoplay
+         muted
+         loop
+         playsinline>
+    <source src="./resources/about video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Status text on top -->
+  <div id="soundStatus" class="sound-status top">Muted</div>
 </div>
           <div class="about-img-badge">
             <div class="badge-num">2026</div>
@@ -459,15 +472,32 @@
     <div class="glow-line"></div>
     <h2 class="section-title">Get In <span>Touch</span></h2>
 
-    <div class="contact-grid" style="grid-template-columns: 1fr 1fr;">
+    <div class="contact-grid" >
 
       <!-- Phone -->
-      <div class="contact-card reveal delay-1">
-        <div class="c-icon"><img src="./resources/phone.png" alt="" class="c-icon"></div>
-        <h4>Phone</h4>
-        <a href="tel:+917092938944">+91 70929 38944</a>
-        <p style="color:var(--text-muted); font-size:13px;">Mon – Sat, 9 AM – 7 PM IST</p>
-      </div>
+    <div class="contact-card reveal delay-1 contact-split">
+
+  <!-- Phone -->
+  <div class="contact-split-item">
+    <div class="c-icon">
+      <img src="./resources/phone.png" alt="Phone">
+    </div>
+    <h4>Phone</h4>
+    <a href="tel:+917092938944">+91 70929 38944</a>
+    <p>Mon – Sat, 9 AM – 7 PM IST</p>
+  </div>
+
+  <!-- Gmail -->
+  <div class="contact-split-item">
+    <div class="c-icon">
+      <img src="./resources/gmail.png" alt="Gmail">
+    </div>
+    <h4>Email</h4>
+    <a href="mailto:vip25.head@gmail.com">vip25.head@gmail.com</a>
+    <p>24×7 Support</p>
+  </div>
+
+</div>
 
       <!-- Social -->
       <div class="contact-card reveal delay-2">
@@ -494,7 +524,10 @@
              style="font-size: 11px; width: auto; padding: 0 10px; font-family: 'Sora', sans-serif; font-weight: 600; color: var(--green); letter-spacing: 0.3px;">
             Community
           </a>
-
+          <a href="https://www.linkedin.com/company/111267394/admin/dashboard/" target="_blank" rel="noopener"
+             class="social-link" title="linkedin" aria-label="WhatsApp">
+             <img src="./resources/linkedin.png" alt="" class="social-link">
+          </a>
           <!-- Facebook -->
           <a href="https://facebook.com/vip25" target="_blank" rel="noopener"
              class="social-link" title="Facebook" aria-label="Facebook">
@@ -502,7 +535,7 @@
           </a>
 
           <!-- Gmail -->
-          <a href="mailto:vip25.head@gmail.com"
+          <a href="mailto:vip25.head@gmail.com" target="_blank" rel="noopener " 
              class="social-link" title="Gmail" aria-label="Email us">
              <img src="./resources/gmail.png" alt="" class="social-link">
           </a>
@@ -523,7 +556,7 @@
       <div class="footer-inner">
         <div class="footer-brand">
            <a href="index.html" class="nav-logo">
-        <img src="./resources/Logo__1_-removebg-preview.png" alt="">
+        <img src="./resources/Logo.png" alt="">
         <span class="nav-logo-text"><span>VIP</span>25</span>
       </a>
         </div>
